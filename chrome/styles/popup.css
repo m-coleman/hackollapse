@@ -1,6 +1,5 @@
 .popup-body {
 	width: 300px;
-	height: 100px;
 	margin: 8px 0 0 0 !important;
 }
 
@@ -84,8 +83,8 @@
 .btn {
 	width: 70%;
 	height: 30px;
-	border: 0;
 	color: #0497E1;
+	background-color: white;
 	text-align: center;
 	font-weight: 600;
 	border: 1px solid #0497E1;

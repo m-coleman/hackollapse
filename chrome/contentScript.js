@@ -1,12 +1,15 @@
-window.onload = initHackollapse;
 var logoutBtn;
 var persistSetting;
+if (document.readyState === 'complete')
+	initHackollapse();
+else
+	window.onload = initHackollapse;
 
 function initHackollapse() {
 	logoutBtn = document.getElementById('logout');
 
-	chrome.storage.sync.get(['persistSetting', 'toggleHideChild'], function(data) {
-		persistSetting = (data && data['persistSetting']) ? data['persistSetting'] : 'doNotPersist';
+	chrome.storage.local.get(['persistSetting', 'toggleHideChild'], function(data) {
+		persistSetting = (data && data['persistSetting']) ? data['persistSetting'] : 'manualPersist';
 		var toggleHideChild = (data && typeof data['toggleHideChild'] === "boolean") ? data['toggleHideChild'] : true;
 
 		var hideChildStyle = 'margin: 0 4px 0 5px; font-size: x-small; display: inline-block;';

@@ -9,7 +9,7 @@ window.onload = function() {
 		window.close();
 	});
 
-	chrome.storage.sync.get(['persistSetting', 'toggleHideChild'], function(data) {
+	chrome.storage.local.get(['persistSetting', 'toggleHideChild'], function(data) {
 		var persistSettingSelect = document.getElementById('persistSetting');
 		var persistSetting = (data && data['persistSetting']) ? data['persistSetting'] : 'manualPersist';
 		persistSettingSelect.value = persistSetting;
@@ -21,7 +21,7 @@ window.onload = function() {
 			var newValue = e.target.value;
 			dirtyPersist = newValue !== origPersistSetting;
 			setPersistAnnotation(newValue);
-			chrome.storage.sync.set({'persistSetting': newValue}, function() {
+			chrome.storage.local.set({'persistSetting': newValue}, function() {
 				refreshRow.style.display = (dirtyPersist || dirtyToggleChild) ? '' : 'none';
 			});
 		};
@@ -35,7 +35,7 @@ window.onload = function() {
 		toggleHideChildInput.onchange = function(e) {
 			var newValue = e.target.checked;
 			dirtyToggleChild = newValue !== origToggleHideChild;
-			chrome.storage.sync.set({'toggleHideChild': newValue}, function() {
+			chrome.storage.local.set({'toggleHideChild': newValue}, function() {
 				refreshRow.style.display = (dirtyPersist || dirtyToggleChild) ? '' : 'none';
 			});
 		};

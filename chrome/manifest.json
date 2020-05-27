@@ -2,8 +2,9 @@
 	"name": "Hackollapse",
 	"version": "1.0",
 	"description": "Collapse comment threads on Hacker News!",
-	"permissions": ["storage"],
+	"permissions": ["storage", "tabs"],
 	"page_action": {
+	  	"show_matches": ["https://news.ycombinator.com/*"],
 		"default_title": "Hackollapse",
 		"default_popup": "popup.html",
 		"default_icon": {
@@ -16,6 +17,9 @@
 	}],
 	"icons": {
 	  "16": "images/wrecking-ball.png"
+	},
+	"background": {
+		"scripts": ["background.js"]
 	},
 	"manifest_version": 2
 }
