@@ -42,9 +42,9 @@ window.onload = function() {
 	});
 
 	var persistAnnotations = {
-		"manualPersist": "HN will remember that you collapsed the comment when clicking the [-] icon, but not when clicking <u>collapse</u>",
+		"manualPersist": "HN will remember that you collapsed a comment when clicking the [-] icon, but not when clicking <u>collapse</u>",
 		"neverPersist": "HN will never remember that you collapsed a comment when clicking [-] or <u>collapse</u>",
-		"alwaysPersist": "HN will always remember that you collapsed the comment when clicking [-] and <u>collapse</u>",
+		"alwaysPersist": "HN will always remember that you collapsed a comment when clicking [-] and <u>collapse</u>",
 		"off": "<u>collapse</u> is not shown and custom persistence logic is turned off"
 	};
 

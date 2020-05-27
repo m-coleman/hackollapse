@@ -9,6 +9,8 @@ function initHackollapse() {
 		persistSetting = (data && data['persistSetting']) ? data['persistSetting'] : 'doNotPersist';
 		var toggleHideChild = (data && typeof data['toggleHideChild'] === "boolean") ? data['toggleHideChild'] : true;
 
+		var hideChildStyle = 'margin: 0 4px 0 5px; font-size: x-small; display: inline-block;';
+		var collapseStyle = 'margin-left: 5px; font-size: x-small; display: inline-block;';
 		var comments = getComments();
 		for (var i = 0; i < comments.length; i += 1) {
 			var comment = comments[i];
@@ -17,29 +19,22 @@ function initHackollapse() {
 
 			if (toggleHideChild) {
 				var numChildren = parseInt(getFirstChildByClass(comment, 'togg').getAttribute('n')) - 1;
-				var hackollapseChildrenDOM =
-					`<font size='1' style='padding-left: 5px; color: black;'>
-						<u>
-							<a href='javascript:void(0)' class='hackollapseChildren' action='hide'
-								n='${numChildren}' comment-id='${commentId}'>
-								hide child comments (${numChildren})
-							</a>
-						</u>
-					</font>`;
+				var hideChildCommentsDOM =
+					`<a href='javascript:void(0)' class='hackollapseChildren' action='hide'
+						n='${numChildren}' comment-id='${commentId}' style='${hideChildStyle}'>
+						hide child comments (${numChildren})
+					</a>`;
 
-				// only add hackollapseChildrenDOM to elements with children
+				// only add hideChildCommentsDOM to elements with children
 				if (numChildren > 0)
-					replyDiv.firstElementChild.insertAdjacentHTML('beforeend', hackollapseChildrenDOM);
+					replyDiv.firstElementChild.insertAdjacentHTML('beforeend', hideChildCommentsDOM);
 			}
 
 			if (persistSetting !== 'off') {
 				var hackollapseThreadDOM =
-					`<font size='1' style='padding-left: 5px; color: black;'>
-						<u>
-							<a href='javascript:void(0)' class='hackollapseThread' comment-id='${commentId}'>
-							collapse
-						</u>
-					</font>`;
+					`<a href='javascript:void(0)' class='hackollapseThread' comment-id='${commentId}' style='${collapseStyle}'>
+						collapse
+					</a>`;
 
 				// add a thread collapse if this is a child comment
 				if (getIndent(comment) > 0)
