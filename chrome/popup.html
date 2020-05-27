@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="/styles/popup.css">
+		<script src="popup.js"></script>
+	</head>
+	<body class="popup-body">
+		<div class="header">
+			<img src="images/wrecking-ball.png" class="hackollapse-icon"/>
+			<span>Hackollapse</span>
+			<a href="https://www.github.com/m-coleman/hackollapse" target="_blank" class="gh-link">
+				<img src="images/github.png" class="gh-icon"/>
+			</a>
+		</div>
+
+		<hr class="hr-spacer top-hr-margin"/>
+
+		<div class="settings">
+			<div>
+				<label for="persistSetting" class="setting-text"
+					   title="Change behavior of the collapse action">
+					collapse
+				</label>
+				<select id="persistSetting" class="persist-setting">
+					<option value="manualPersist">persist on [-]</option>
+					<option value="neverPersist">never persist</option>
+					<option value="alwaysPersist">always persist</option>
+					<option value="off">off</option>
+				</select>
+				<div id="persistAnnotation" class="persist-annotation"></div>
+			</div>
+
+			<br/>
+
+			<div class="setting-row">
+				<label for="toggleHideChild" class="setting-text"
+					   title="Toggle visibility of the show/hide child comments action. This collapse is not persisted">
+					hide child comments
+				</label>
+				<label class="switch">
+					<input id="toggleHideChild" type="checkbox" checked>
+					<span class="slider round"></span>
+				</label>
+			</div>
+		</div>
+
+		<div class="setting-row" id="refreshRow" style="display: none;">
+			<hr class="hr-spacer bottom-hr-margin"/>
+			<div class="refresh-row">
+				<span>Refresh for the changes to take effect</span>
+				<div class="refresh-btn-container">
+					<button id="refreshButton" class="btn">Refresh</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
