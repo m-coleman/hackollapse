@@ -25,7 +25,7 @@ Change how the `collapse` action works:
 - *Note*: HN will not remember that you collapsed/expanded a thread when clicking this action
 
 ### Browser Compatibility ###
-Available as a browser extension on Chrome & Firefox
+Available as a browser extension on <a href="https://chrome.google.com/webstore/detail/hackollapse/cfinlodmmfffhieajhboebcfplcfkfgg" target="_blank">Chrome</a> & <a href="https://addons.mozilla.org/en-US/firefox/addon/hackollapse/" target="_blank">Firefox</a>
 
 ##### Acknowledgements #####
 Inspired by Reddit Enhancement Suite and Apollo. Icon made by <a href="https://smashicons.com/" title="Smashicons" target="_blank">Smashicons</a>
