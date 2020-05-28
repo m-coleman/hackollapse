@@ -1,4 +1,4 @@
-# Hackollapse
+# Hackollapse <img src="resources/images/wrecking-ball.png" width="40px" height="40px"/>
 
 A better way to collapse comment threads on Hacker News!
 
